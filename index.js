@@ -160,8 +160,12 @@ return callback(list.includes(item))
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback) {
+  let dupeFreeArr = list.filter(function(item,pos) {
+    return list.indexOf(item) == pos;
+  })
+  return callback(dupeFreeArr)
+  
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
