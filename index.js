@@ -254,12 +254,12 @@ function tallyUpDonations(runners) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  let count = 0;
+  return function counter() {
+    return count++;
   }
   // BROKEN CODE ENDS
-}
+};
 
 /**
  * ### Challenge `counterMakerWithLimit`
@@ -281,8 +281,18 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(timeLimit) {
+  let count = 0;
+  return function counter() {
+    for (count=0; count < timeLimit; count++) {
+      if (count = timeLimit) {
+        count = 0;
+      } else {
+        count++;
+      }
+    }
+    return count;
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
